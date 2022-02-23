@@ -1,0 +1,44 @@
+.wordContainer{
+    margin-bottom: 1rem;
+}
+
+.letter{
+    width: 20px;
+    height: 20px;
+    max-width: 20px;
+    max-height: 20px;
+    border: 4px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 2rem;
+    border-radius: 5px;
+    margin-right: 0.5rem;
+    margin-bottom: 1rem;
+
+    span{
+        font-size: 2rem;
+        text-transform: uppercase;
+    }
+}
+
+.inactive{
+    width: 20px;
+    height: 20px;
+    max-width: 20px;
+    max-height: 20px;
+    border: 4px solid blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    border-radius: 5px;
+    margin-right: 0.5rem;
+    margin-bottom: 1rem;
+
+    span{
+        font-size: 2rem;
+        text-transform: uppercase;
+    }
+}

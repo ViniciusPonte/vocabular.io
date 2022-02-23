@@ -1,0 +1,44 @@
+$small: 500px;
+$medium: 900px;
+
+.keyboard{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    @media screen and (max-width: $small) {
+        max-width: 100px;
+    }
+}
+
+.line{
+    display: flex;
+    margin-bottom: 10px;   
+}
+
+.key{
+    padding: 14px;
+    font-size: 2rem;
+    min-width: 50px;
+    margin-right: 10px;
+    background-color: var(--gray-700);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.disabledKey{
+    padding: 14px;
+    font-size: 2rem;
+    min-width: 50px;
+    margin-right: 10px;
+    background-color: var(--gray-300);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}

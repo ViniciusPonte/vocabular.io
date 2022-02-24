@@ -1,10 +1,16 @@
+import { useAuth } from '../../contexts/auth';
+import { SignInButton } from '../SignInButton';
 import styles from './styles.module.scss';
 
 export function Header(){
+    const {user} = useAuth();
+
     return (
         <header className={styles.headerContainer}>
             <div className={styles.headerContent}>
-                <span>V<span style={{color: 'yellow'}}>O</span>CA<span style={{color: 'red'}}>B</span>ULA<span style={{color: 'green'}}>R</span>.IO</span>
+                <span style={{fontSize: '2rem'}}>v<span style={{color: 'yellow'}}>o</span>ca<span style={{color: 'red'}}>b</span>ula<span style={{color: 'green'}}>r</span>.io</span>
+                
+                {user ? `${user.email}` : <SignInButton />}
             </div>
         </header>
     );

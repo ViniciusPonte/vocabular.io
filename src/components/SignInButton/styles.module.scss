@@ -1,0 +1,47 @@
+.divSignIn{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    span{
+        font-size: 0.8rem;
+        margin-left: 0.5rem;
+        cursor: pointer;
+        transition: color 0.2s;
+
+        &:hover{
+            color: #04d361;
+        }
+    }
+}
+
+.signInButton{
+    height: 3rem;
+    border-radius: 3rem;
+    background: var(--gray-800);
+    border: 0;
+    padding:  0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-weight: bold;
+
+    svg{
+        width: 20px;
+        height: 20px;
+    }
+
+    svg.closeIcon{
+        margin-left: 1rem;
+    }
+
+    svg:first-child{
+        margin-right: 1rem;
+    }
+
+    transition: filter 0.2s;
+
+    &:hover{
+        filter: brightness(0.8);
+    }
+}

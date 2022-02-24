@@ -1,0 +1,57 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    span{
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
+
+    input{
+        border: 0;
+        outline: 0;
+        border-radius: 1rem;
+        padding: 1rem;
+        margin-bottom: 1rem; 
+    }
+
+    button{
+        border: 0;
+        outline: 0;
+        border-radius: 1rem;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        width: 100%;
+        text-align: center;
+        align-items: center;
+        transition: filter 0.2s;
+        background-color: var(--gray-900);
+        color: white;
+
+        &:hover{
+            filter: brightness(0.8);
+        }
+    }
+}
+
+.socialButtons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    button{
+        width: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: filter 0.2s;
+        color: white;
+
+        &:hover{
+            filter: brightness(0.8);
+        }
+    }
+    
+}

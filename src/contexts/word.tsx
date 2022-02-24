@@ -44,6 +44,7 @@ export function WordsProvider({ children }) {
         const completeWord = tries[activeTry][0].value + tries[activeTry][1].value + tries[activeTry][2].value + tries[activeTry][3].value + tries[activeTry][4].value;
     
         if(completeWord.length !== 5) return; // ERRO SE A PALAVRA NÃO TIVER 5 LETRAS
+
         if(!words.includes(completeWord.toLowerCase())) return; // ERRO SE A PALAVRA NÃO EXISTIR NA BASE
     
         //VALIDAR PALAVRA
@@ -68,7 +69,6 @@ export function WordsProvider({ children }) {
     
         if(acertou){
           setActiveTry(6);
-          alert('Acertou!! 🥳🥳🥳')
         } else {
           if(activeTry === 6){
             return;

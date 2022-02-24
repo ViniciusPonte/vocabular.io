@@ -10,15 +10,21 @@
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
+    "@emotion/react": "^11.8.1",
+    "@emotion/styled": "^11.8.1",
+    "firebase": "^8.10.1",
     "next": "12.1.0",
+    "notistack": "^2.0.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.3.1",
+    "react-modal": "^3.14.4",
     "sass": "^1.49.8"
   },
   "devDependencies": {
     "@types/node": "^17.0.19",
     "@types/react": "^17.0.39",
+    "@types/react-modal": "^3.13.1",
     "eslint": "8.9.0",
     "eslint-config-next": "12.1.0",
     "typescript": "^4.5.5"

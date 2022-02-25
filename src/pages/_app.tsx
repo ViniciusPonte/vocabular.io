@@ -17,14 +17,14 @@ if (!firebase.apps.length) {
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <SnackbarProvider maxSnack={1} className="snackbar">
-      <AuthProvider>
-        <ModalProvider>
-          <WordsProvider>
-            <Header />
-            <Component {...pageProps} />
-          </WordsProvider>
-        </ModalProvider>
-      </AuthProvider> 
+      <ModalProvider>
+        <AuthProvider>
+            <WordsProvider>
+              <Header />
+              <Component {...pageProps} />
+            </WordsProvider>
+        </AuthProvider> 
+      </ModalProvider>
     </SnackbarProvider>
   )
 }

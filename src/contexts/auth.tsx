@@ -8,6 +8,8 @@ interface AuthContextProps {
     signIn: (email: string, password: string) => Promise<void>,
     signUp: (email: string, password: string, confirmPassword: string) => Promise<void>,
     signInWithGithub: () => Promise<void>,
+    signInWithFacebook: () => Promise<void>,
+    signInWithGoogle: () => Promise<void>,
     signOut: () => Promise<void>,
 }
 
@@ -53,6 +55,36 @@ export function AuthProvider({ children }) {
             .signInWithPopup(new firebase.auth.GithubAuthProvider())
             .then((response) => {
                 setUser(response.user);
+                setModalContent(null);
+                setIsVisible(false);
+            })
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
+    async function signInWithFacebook(){
+        try{
+            return firebase.auth()
+            .signInWithPopup(new firebase.auth.FacebookAuthProvider())
+            .then((response) => {
+                setUser(response.user);
+                setModalContent(null);
+                setIsVisible(false);
+            })
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
+    async function signInWithGoogle(){
+        try{
+            return firebase.auth()
+            .signInWithPopup(new firebase.auth.GoogleAuthProvider())
+            .then((response) => {
+                setUser(response.user);
+                setModalContent(null);
+                setIsVisible(false);
             })
         } catch (err) {
             console.log(err);
@@ -70,7 +102,7 @@ export function AuthProvider({ children }) {
     }
 
     return (
-        <AuthContext.Provider value={{user, token, signIn, signUp, signInWithGithub, signOut }}>
+        <AuthContext.Provider value={{user, token, signIn, signUp, signInWithGithub, signInWithFacebook, signInWithGoogle, signOut }}>
             {children}
         </AuthContext.Provider>
     );
@@ -78,6 +110,6 @@ export function AuthProvider({ children }) {
 
 export function useAuth() {
   const context = useContext(AuthContext);
-  const { user, token, signIn, signUp, signInWithGithub, signOut } = context;
-  return { user, token, signIn, signUp, signInWithGithub, signOut };
+  const { user, token, signIn, signUp, signInWithGithub, signInWithFacebook, signInWithGoogle, signOut } = context;
+  return { user, token, signIn, signUp, signInWithGithub, signInWithFacebook, signInWithGoogle, signOut };
 }

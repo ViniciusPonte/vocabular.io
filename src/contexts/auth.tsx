@@ -6,7 +6,9 @@ interface AuthContextProps {
     user: any,
     token: string,
     signIn: (email: string, password: string) => Promise<void>,
-    signUp: (email: string, password: string, confirmPassword: string) => Promise<void>
+    signUp: (email: string, password: string, confirmPassword: string) => Promise<void>,
+    signInWithGithub: () => Promise<void>,
+    signOut: () => Promise<void>,
 }
 
 const AuthContext = createContext<AuthContextProps>({} as AuthContextProps);
@@ -45,8 +47,30 @@ export function AuthProvider({ children }) {
         .catch(err => console.log(err))
     }
 
+    async function signInWithGithub(){
+        try{
+            return firebase.auth()
+            .signInWithPopup(new firebase.auth.GithubAuthProvider())
+            .then((response) => {
+                setUser(response.user);
+            })
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
+    async function signOut(){
+        try{
+            return firebase.auth()
+            .signOut()
+            .then(() => setUser(null))
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
     return (
-        <AuthContext.Provider value={{user, token, signIn, signUp }}>
+        <AuthContext.Provider value={{user, token, signIn, signUp, signInWithGithub, signOut }}>
             {children}
         </AuthContext.Provider>
     );
@@ -54,6 +78,6 @@ export function AuthProvider({ children }) {
 
 export function useAuth() {
   const context = useContext(AuthContext);
-  const { user, token, signIn, signUp } = context;
-  return { user, token, signIn, signUp };
+  const { user, token, signIn, signUp, signInWithGithub, signOut } = context;
+  return { user, token, signIn, signUp, signInWithGithub, signOut };
 }

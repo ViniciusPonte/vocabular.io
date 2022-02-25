@@ -9,7 +9,7 @@
         transition: color 0.2s;
 
         &:hover{
-            color: #04d361;
+            color: var(--green);
         }
     }
 }

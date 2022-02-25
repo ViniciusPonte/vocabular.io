@@ -23,7 +23,7 @@ const WordsContext = createContext<WordContextProps>({} as WordContextProps);
 
 export function WordsProvider({ children }) {
     const min = Math.ceil(0);
-    const max = Math.floor(10);
+    const max = Math.floor(999);
     const randomNumber = Math.floor(Math.random() * (max - min)) + min;
     const [word, setWord] = useState(words[randomNumber]);
     const [activeTry, setActiveTry] = useState(0);
@@ -51,21 +51,21 @@ export function WordsProvider({ children }) {
         for(let i = 0; i < word.length; i++){
           if(word[i] === completeWord[i]){
             let copy = [...tries];
-            copy[activeTry][i].status = 'green';
+            copy[activeTry][i].status = 'var(--green)';
             setTries(copy);
           } else if (word.includes(completeWord[i])){
             let copy = [...tries];
-            copy[activeTry][i].status = 'yellow';
+            copy[activeTry][i].status = 'var(--yellow)';
             setTries(copy);
           } else {
             let copy = [...tries];
-            copy[activeTry][i].status = 'brown';
+            copy[activeTry][i].status = 'var(--brown)';
             setNonExistentLetters(old => [...old, completeWord[i].toUpperCase()])
             setTries(copy);
           }
         }
      
-        const acertou = tries[activeTry][0].status === 'green' && tries[activeTry][1].status === 'green' && tries[activeTry][2].status === 'green' && tries[activeTry][3].status === 'green' && tries[activeTry][4].status === 'green';
+        const acertou = tries[activeTry][0].status === 'var(--green)' && tries[activeTry][1].status === 'var(--green)' && tries[activeTry][2].status === 'var(--green)' && tries[activeTry][3].status === 'var(--green)' && tries[activeTry][4].status === 'var(--green)';
     
         if(acertou){
           setActiveTry(6);

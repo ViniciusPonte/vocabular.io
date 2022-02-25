@@ -27,7 +27,7 @@ export function Modal(){
                   justifyContent: 'center'
                 },
                 content: {
-                  inset: 'auto',
+                  inset: 'unset',
                   border: 0,
                   background: 'var(--gray-700)',
                   overflow: 'auto',
@@ -35,11 +35,15 @@ export function Modal(){
                   borderRadius: '4px',
                   outline: 'none',
                   padding: '20px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  alignItems: 'center',
                   boxShadow: '0px 0px 13px 0px rgba(0,0,0,0.8)'
                 }
               }}
         >
-            <p>{modalContent}</p>
+            {modalContent}
         </ReactModal>
     )
 }

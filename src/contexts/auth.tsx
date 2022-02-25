@@ -6,7 +6,7 @@ interface AuthContextProps {
     user: any,
     token: string,
     signIn: (email: string, password: string) => Promise<void>,
-    signUp: (email: string, password: string) => Promise<void>
+    signUp: (email: string, password: string, confirmPassword: string) => Promise<void>
 }
 
 const AuthContext = createContext<AuthContextProps>({} as AuthContextProps);
@@ -30,9 +30,10 @@ export function AuthProvider({ children }) {
         .catch(err => console.log(err))
     }
 
-    async function signUp(email: string, password: string){
+    async function signUp(email: string, password: string, confirmPassword: string){
         if(email === '') return;
         if(password === '') return;
+        if(confirmPassword !== password) return;
 
         await firebase.auth().createUserWithEmailAndPassword(email, password)
         .then(async response => {

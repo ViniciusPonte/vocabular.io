@@ -1,0 +1,14 @@
+.helpbutton{
+    position: absolute;
+    top: 7rem;
+    right: 2rem;
+    cursor: pointer;
+    border-radius: 100px;
+    transition: box-shadow 0.2s;
+    border: 3px solid white;
+    padding: 5px;
+
+    &:hover{
+        box-shadow:0px 0px 10px 1px #FFFFFF;
+    }
+}

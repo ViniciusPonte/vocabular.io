@@ -8,7 +8,7 @@ export function Header(){
     return (
         <header className={styles.headerContainer}>
             <div className={styles.headerContent}>
-                <span style={{fontSize: '2rem'}}>v<span style={{color: 'yellow'}}>o</span>ca<span style={{color: 'red'}}>b</span>ula<span style={{color: 'green'}}>r</span>.io</span>
+                <span style={{fontSize: '2rem'}}>v<span style={{color: 'var(--yellow)'}}>o</span>ca<span style={{color: 'var(--brown)'}}>b</span>ula<span style={{color: 'var(--green)'}}>r</span>.io</span>
                 
                 {user ? `${user.email}` : <SignInButton />}
             </div>

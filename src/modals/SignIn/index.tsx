@@ -17,7 +17,7 @@ export function SignIn(){
             <span>Entrar</span>
 
             <input placeholder="E-mail" value={email} onChange={e => setEmail(e.target.value)}/>
-            <input placeholder="Senha" value={password} onChange={e => setPassword(e.target.value)}/>
+            <input placeholder="Senha" type="password" value={password} onChange={e => setPassword(e.target.value)}/>
 
             <button onClick={() => signIn(email, password)}>Entrar</button>
 

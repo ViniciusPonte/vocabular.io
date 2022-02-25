@@ -1,8 +1,9 @@
 import styles from '../styles/home.module.scss'
 import { Word } from '../components/Word';
-import ReactModal from 'react-modal';
 import { Keyboard } from '../components/Keyboard';
 import { Modal } from '../components/Modal';
+import { HelpButton } from '../components/HelpButton';
+import { RankingButton } from '../components/RankingButton';
 
 function Home() {
   return (
@@ -10,6 +11,8 @@ function Home() {
       <Word />
       <Keyboard />
       <Modal />
+      <HelpButton />
+      <RankingButton />
     </div>
   )
 }

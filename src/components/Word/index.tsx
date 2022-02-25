@@ -40,54 +40,54 @@ export function Word(){
             <div style={{display: 'flex'}}>
                 {tries[0].map((item, index) => {
                     if(activeTry === 0){
-                        return <div key={Math.random()} className={styles.letter} style={{borderColor: index === position && 'red'}} onClick={() => setPosition(index)}><span>{item.value}</span></div>
+                        return <div key={Math.random()} className={styles.letter} style={{borderColor: index === position && 'var(--gray-300)'}} onClick={() => setPosition(index)}><span>{item.value}</span></div>
                     } else {
-                        return <div key={Math.random()} className={styles.inactive}  style={{borderColor: item.status && item.status}}><span>{item.value}</span></div>
+                        return <div key={Math.random()} className={styles.inactive}  style={{borderColor: item.status && item.status, backgroundColor: item.status && item.status}}><span>{item.value}</span></div>
                     }
                 })}
             </div>
             <div style={{display: 'flex'}}>
                 {tries[1].map((item, index) => {
                     if(activeTry === 1){
-                        return <div key={Math.random()} className={styles.letter} style={{borderColor: index === position && 'red'}} onClick={() => setPosition(index)}><span>{item.value}</span></div>
+                        return <div key={Math.random()} className={styles.letter} style={{borderColor: index === position && 'var(--gray-300)'}} onClick={() => setPosition(index)}><span>{item.value}</span></div>
                     } else {
-                        return <div key={Math.random()} className={styles.inactive}  style={{borderColor: item.status && item.status}}><span>{item.value}</span></div>
+                        return <div key={Math.random()} className={styles.inactive}  style={{borderColor: item.status && item.status, backgroundColor: item.status && item.status}}><span>{item.value}</span></div>
                     }
                 })}
             </div>
             <div style={{display: 'flex'}}>
                 {tries[2].map((item, index) => {
                     if(activeTry === 2){
-                        return <div key={Math.random()} className={styles.letter} style={{borderColor: index === position && 'red'}} onClick={() => setPosition(index)}><span>{item.value}</span></div>
+                        return <div key={Math.random()} className={styles.letter} style={{borderColor: index === position && 'var(--gray-300)'}} onClick={() => setPosition(index)}><span>{item.value}</span></div>
                     } else {
-                        return <div key={Math.random()} className={styles.inactive}  style={{borderColor: item.status && item.status}}><span>{item.value}</span></div>
+                        return <div key={Math.random()} className={styles.inactive}  style={{borderColor: item.status && item.status, backgroundColor: item.status && item.status}}><span>{item.value}</span></div>
                     }
                 })}
             </div>
             <div style={{display: 'flex'}}>
                 {tries[3].map((item, index) => {
                     if(activeTry === 3){
-                        return <div key={Math.random()} className={styles.letter} style={{borderColor: index === position && 'red'}} onClick={() => setPosition(index)}><span>{item.value}</span></div>
+                        return <div key={Math.random()} className={styles.letter} style={{borderColor: index === position && 'var(--gray-300)'}} onClick={() => setPosition(index)}><span>{item.value}</span></div>
                     } else {
-                        return <div key={Math.random()} className={styles.inactive}  style={{borderColor: item.status && item.status}}><span>{item.value}</span></div>
+                        return <div key={Math.random()} className={styles.inactive}  style={{borderColor: item.status && item.status, backgroundColor: item.status && item.status}}><span>{item.value}</span></div>
                     }
                 })}
             </div>
             <div style={{display: 'flex'}}>
                 {tries[4].map((item, index) => {
                     if(activeTry === 4){
-                        return <div key={Math.random()} className={styles.letter} style={{borderColor: index === position && 'red'}} onClick={() => setPosition(index)}><span>{item.value}</span></div>
+                        return <div key={Math.random()} className={styles.letter} style={{borderColor: index === position && 'var(--gray-300)'}} onClick={() => setPosition(index)}><span>{item.value}</span></div>
                     } else {
-                        return <div key={Math.random()} className={styles.inactive}  style={{borderColor: item.status && item.status}}><span>{item.value}</span></div>
+                        return <div key={Math.random()} className={styles.inactive}  style={{borderColor: item.status && item.status, backgroundColor: item.status && item.status}}><span>{item.value}</span></div>
                     }
                 })}
             </div>
             <div style={{display: 'flex'}}>
                 {tries[5].map((item, index) => {
                     if(activeTry === 5){
-                        return <div key={Math.random()} className={styles.letter} style={{borderColor: index === position && 'red'}} onClick={() => setPosition(index)}><span>{item.value}</span></div>
+                        return <div key={Math.random()} className={styles.letter} style={{borderColor: index === position && 'var(--gray-300)'}} onClick={() => setPosition(index)}><span>{item.value}</span></div>
                     } else {
-                        return <div key={Math.random()} className={styles.inactive}  style={{borderColor: item.status && item.status}}><span>{item.value}</span></div>
+                        return <div key={Math.random()} className={styles.inactive}  style={{borderColor: item.status && item.status, backgroundColor: item.status && item.status}}><span>{item.value}</span></div>
                     }
                 })}
             </div>

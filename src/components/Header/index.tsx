@@ -1,12 +1,33 @@
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import { useAuth } from '../../contexts/auth';
+import { useWords } from '../../contexts/word';
 import { ExperienceBar } from '../ExperienceBar';
 import { SignInButton } from '../SignInButton';
 import styles from './styles.module.scss';
+import firebase from 'firebase'
 
 export function Header(){
     const {user, signOut} = useAuth();
-    console.log(user);
+    const {att} = useWords();
+    const [points, setPoints] = useState(0)
+    
+    useEffect(() => {
+        if(user){
+            firebase.firestore().collection('points').doc(user.uid).get()
+            .then(client => {
+                if(!client.exists){
+                    return;
+                } else {
+                    const data = client.data();
+                    setPoints(data.points);
+                } 
+            })
+            .catch(err => {
+                console.log(err);
+            });
+        }
+    }, [att, user])
 
     return (
         <header className={styles.headerContainer}>
@@ -19,7 +40,7 @@ export function Header(){
                         <div style={{display: 'flex', flexDirection: 'column', marginLeft: '10px', width: '100%'}}>
                             {user.displayName ? <span>{user.displayName}</span> : <span>{user.email}</span>}
                             {/* <ExperienceBar /> */}
-                            <span>0 pontos</span>
+                            <span>{points} pontos</span>
                         </div>{/* 
                         <button onClick={() => signOut()}>sair</button> */}
                     </div>

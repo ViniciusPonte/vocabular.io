@@ -1,0 +1,25 @@
+.bar{
+    display: flex;
+    align-items: center;
+    
+    span{
+        font-size: 1rem;
+    }
+
+    div {
+        flex: 1;
+        height: 4px;
+        border-radius: 4px;
+        background-color: var(--gray-300);
+        margin: 0 0.5rem;
+        position: relative;
+
+        div {
+            height: 4px;
+            border-radius: 4px;
+            background-color: var(--green);
+            margin: 0;
+        }
+
+    }
+}
